@@ -13,4 +13,8 @@ app.use("/api/auth", require("./routes/auth.routes"))
 app.use("/api/project", require("./routes/project.routes"))
 app.use("/api/chat", require("./routes/chat.routes"))
 
-app.listen(5000, ()=>console.log("Server Started"))
+const PORT = process.env.PORT || 5000
+
+app.listen(PORT, () => {
+  console.log("Server running on port", PORT)
+})
